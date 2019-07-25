@@ -154,6 +154,10 @@ body {
   align-items: center;
 }
 
+.tac {
+  text-align: center;
+}
+
 .heading {
   text-align: center;
   color: #000;
@@ -161,7 +165,7 @@ body {
 
   h2 {
     margin: 0;
-    padding: 20px 12px 12px;
+    padding: 24px 12px 12px;
     font-weight: 700;
     font-size: 22px;
   }
@@ -186,6 +190,8 @@ body {
 
 .btn {
   display: block;
+  max-width: 400px;
+  margin: 0 auto;
   padding: 12px;
   text-align: center;
   font-weight: 700;
@@ -216,6 +222,7 @@ body {
     margin-bottom: 20px;
 
     h2 {
+      padding-top: 30px;
       font-size: 36px;
     }
 

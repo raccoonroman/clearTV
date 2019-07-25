@@ -1,0 +1,22 @@
+.product-work {
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.product-work__img-wrapper {
+  padding: 10px 0 20px;
+}
+
+.product-work__btn {
+  margin-bottom: 28px;
+}
+
+@media (min-width: 768px) {
+  .product-work__img-wrapper {
+    padding-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .product-work__btn {
+    margin: 28px auto;
+  }
+}
