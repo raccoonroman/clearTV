@@ -85,7 +85,8 @@ img {
 }
 
 p {
-  margin: 0 0 20px;
+  margin: 0;
+  padding: 0 0 20px;
 }
 
 @mixin list {
@@ -130,6 +131,11 @@ body {
     color: #fff;
     background-color: #363636;
   }
+}
+
+.bg-white {
+  color: #000;
+  background-color: #fff;
 }
 
 .row {
