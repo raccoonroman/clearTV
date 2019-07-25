@@ -66,4 +66,19 @@ $(document).ready(function(){
     asNavFor: '.about__slider-for',
     focusOnSelect: true
   });
+
+
+  $('.reviews__list').slick({
+  dots: true,
+  mobileFirst: true,
+  infinite: false,
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: "unslick"
+    },
+  ]
 });
+});
+

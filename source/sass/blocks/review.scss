@@ -1,0 +1,52 @@
+.review {
+  text-align: center;
+}
+
+.review__autor-img {
+
+  img {
+    border-radius: 50%;
+    max-width: 150px;
+  }
+}
+
+.review__rating {
+  margin: 10px auto;
+  height: 34px;
+  width: 100%;
+  max-width: 220px;
+  background: url('../img/star.svg') left center repeat-x;
+}
+
+.review__autor-name {
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+}
+
+.review__title {
+  margin: 0;
+  font-weight: 700;
+  padding-bottom: 12px;
+}
+
+.review__content {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .review__autor-name {
+    margin: 5px auto;
+    font-size: 12px;
+  }
+
+  .review__title {
+    padding-bottom: 5px;
+    text-align: left;
+    font-size: 24px;
+  }
+
+  .review__content {
+    text-align: left;
+  }
+}

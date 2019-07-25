@@ -145,7 +145,10 @@ body {
 }
 
 .col-3,
-.col-6 {
+.col-4,
+.col-6,
+.col-8,
+.col-9 {
   width: 100%;
   padding: 0 15px;
 }
@@ -158,10 +161,18 @@ body {
   text-align: center;
 }
 
+.fsh0 {
+  flex-shrink: 0;
+}
+
 .heading {
   text-align: center;
   color: #000;
   line-height: 1.4;
+
+  &--blue {
+    color: #00a0e1;
+  }
 
   h2 {
     margin: 0;
@@ -214,8 +225,20 @@ body {
     width: 25%;
   }
 
+  .col-4 {
+    width: calc(100% / 3);
+  }
+
   .col-6 {
     width: 50%;
+  }
+
+  .col-8 {
+    width: calc(100% / 3 * 2);
+  }
+
+  .col-9 {
+    width: 75%;
   }
 
   .heading {
