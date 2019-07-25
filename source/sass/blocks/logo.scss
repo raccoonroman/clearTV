@@ -1,0 +1,16 @@
+.logo--header {
+  display: inline-block;
+
+  img {
+    max-width: 112px;
+  }
+}
+
+  @media (min-width: 768px) {
+  .logo--header {
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

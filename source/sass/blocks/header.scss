@@ -1,0 +1,47 @@
+.header {
+  text-align: center;
+
+  .container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #B7B7B7;
+  }
+
+  .countdown__digits::before {
+    right: -20px;
+  }
+}
+
+.header__text {
+  margin: 0;
+  color: #e86d00;
+  font-weight: 700;
+  text-align: center;
+
+  span {
+    display: block;
+  }
+}
+
+.header__btn {
+  text-transform: uppercase;
+  min-width: 166px;
+}
+
+@media (min-width: 768px) {
+
+  .header__text {
+    font-weight: 600;
+    color: #ec6f00;
+
+    span {
+      &:first-child {
+        color: #545456;
+      }
+
+      &:last-child {
+        color: #dc6700;
+      }
+    }
+  }
+}

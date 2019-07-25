@@ -1,0 +1,44 @@
+.countdown {
+  max-width: 250px;
+  min-width: 180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #58585a;
+  text-align: center;
+}
+
+.countdown__digits {
+  min-width: 50px;
+  position: relative;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.3;
+
+  &::after {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  &:nth-child(1)::after {
+    content: 'Hours';
+  }
+
+  &:nth-child(3)::after {
+    content: 'Minutes';
+  }
+
+  &:nth-child(5)::after {
+    content: 'seconds';
+  }
+}
+
+.countdown__colon {
+  font-size: 24px;
+  font-weight: 300;
+  transform: translateY(-7px);
+}

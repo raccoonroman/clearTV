@@ -1,0 +1,22 @@
+.header-top {
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+  background-color: #58585A;
+
+  .container {
+    color: inherit;
+    background-color: inherit;
+    padding: 0 20px;
+  }
+}
+
+.header-top__text {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .header-top {
+    font-size: 18px;
+  }
+}
