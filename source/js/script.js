@@ -52,8 +52,9 @@ var updateTime = setInterval(function() {
 
 
 
-//slider with thumbnail
+
 $(document).ready(function(){
+  //slider with thumbnail
   $('.about__slider-for').slick({
     slidesToShow: 1,
     arrows: false,
@@ -67,18 +68,77 @@ $(document).ready(function(){
     focusOnSelect: true
   });
 
-
+  //reviews slider on mobile
   $('.reviews__list').slick({
-  dots: true,
-  mobileFirst: true,
-  infinite: false,
-  adaptiveHeight: true,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: "unslick"
-    },
-  ]
+    dots: true,
+    mobileFirst: true,
+    infinite: false,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: "unslick"
+      },
+    ]
+  });
+
+
+  //animate scroll to content
+  $('a[href^="#"]:not(.active)').on('click', function(event) {
+
+    var target = $( $(this).attr('href') );
+
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: target.offset().top
+        }, 500);
+    }
 });
 });
 
+
+
+//toggle fag content
+var faqBtn = document.querySelector('#show-faq');
+var faqContent = document.querySelector('#faq');
+
+faqBtn.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  if (faqBtn.classList.contains('active')) {
+    faqBtn.classList.remove('active');
+    faqContent.classList.remove('active');
+  } else {
+    faqBtn.classList.add('active');
+    faqContent.classList.add('active');
+  }
+});
+
+
+
+
+// faq items
+var questions = document.querySelectorAll('.faq__item-question');
+
+var removeClassActive = function(questions) {
+  for (var i = 0; i < questions.length; i++) {
+    questions[i].classList.remove('active');
+  }
+};
+
+
+var addquestionClickHandler = function (question) {
+  question.addEventListener('click', function () {
+    if (question.classList.contains('active')) {
+      question.classList.remove('active');
+    } else {
+      removeClassActive(questions);
+      question.classList.add('active');
+    }
+  });
+};
+
+for (var i = 0; i < questions.length; i++) {
+  addquestionClickHandler(questions[i]);
+}
+//end of faq items

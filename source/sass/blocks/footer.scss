@@ -1,0 +1,39 @@
+.footer__nav-list {
+  @include list;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.footer__link {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 10px;
+  text-decoration: none;
+  color: #969a99;
+  transition: color .25s;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.copyright {
+  padding: 12px 0 20px;
+  font-size: 14px;
+  color: #787878;
+}
+
+@media (min-width: 768px) {
+  .footer__nav-list {
+    font-size: 16px;
+  }
+
+  .footer__link {
+    padding: 0 20px;
+  }
+}
