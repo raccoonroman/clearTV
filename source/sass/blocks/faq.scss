@@ -1,14 +1,7 @@
 .faq__container {
-  max-height: 0;
   overflow: hidden;
-  transition: max-height .5s;
-
-  &.active {
-    max-height: 2000px;
-  }
+  transition: height .5s;
 }
-
-
 
 .faq__list {
   padding-bottom: 50px;

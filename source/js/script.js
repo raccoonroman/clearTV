@@ -83,35 +83,18 @@ $(document).ready(function(){
   });
 
 
-  //animate scroll to content
-  $('a[href^="#"]:not(.active)').on('click', function(event) {
+  //animate scroll to any content (cope/paste)
+  $('a[href^="#"]').on('click', function(event) {
 
     var target = $( $(this).attr('href') );
 
-    if( target.length ) {
+    if( target.length) {
         event.preventDefault();
         $('html, body').animate({
             scrollTop: target.offset().top
         }, 500);
     }
 });
-});
-
-
-
-//toggle fag content
-var faqBtn = document.querySelector('#show-faq');
-var faqContent = document.querySelector('#faq');
-
-faqBtn.addEventListener('click', function (evt) {
-  evt.preventDefault();
-  if (faqBtn.classList.contains('active')) {
-    faqBtn.classList.remove('active');
-    faqContent.classList.remove('active');
-  } else {
-    faqBtn.classList.add('active');
-    faqContent.classList.add('active');
-  }
 });
 
 
@@ -142,3 +125,24 @@ for (var i = 0; i < questions.length; i++) {
   addquestionClickHandler(questions[i]);
 }
 //end of faq items
+
+
+
+//height animation for any element (cope/paste)
+function slidetoggle() {
+  var _this = this;
+
+  document.querySelectorAll(this.getAttribute('data-slidetoggle')).forEach(function (el) {
+    var ch = el.clientHeight,
+        sh = el.scrollHeight,
+        isCollapsed = !ch,
+        noHeightSet = !el.style.height;
+    el.style.height = (isCollapsed || noHeightSet ? sh : 0) + "px";
+    if (noHeightSet) return slidetoggle.call(_this);
+  });
+}
+
+document.querySelectorAll("[data-slidetoggle]").forEach(function (el) {
+  return el.addEventListener('click', slidetoggle);
+});
+//end of height animation
