@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://fast.wistia.com/embed/medias/vbw5kvpxzp.jsonp" async></script>
   <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+  <script src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.min.js"></script>
 </head>
 <body>
 
@@ -365,6 +366,34 @@
   </div>
 
 </div>
+
+
+<section class="popup popup--special-offer" id="popup">
+  <div class="popup__wrapper">
+    <div class="row">
+      <div class="col-4 popup__left-col tac">
+        <div class="popup__mobile-column">
+          <p class="popup__discount-text popup__discount-text--bigger">Special Offer!</p>
+          <p class="popup__discount-value">50<sup>%</sup></p>
+        </div>
+        <div class="popup__product-image">
+          <picture>
+            <source media="(min-width: 768px)" srcset="img/product-warranty-badge.png">
+            <img src="img/warranty.png" alt="Warranty">
+          </picture>
+        </div>
+      </div>
+      <div class="col-8">
+        <p class="popup__discount-title">Get 50% SAVINGS<br>on a LIFETIME WARRANTY Now! </p>
+        <p class="popup__discount-text">Upgrade your 1-year warranty to a LIFETIME warranty on all your ClearTv Key devices for only $10! That’s 50% OFF our standard price! Lock down this special offer today and rest assured that if something is ever wrong with your device(s), you will be sent a brand new one for no cost.</p>
+        <del class="popup__old-price">Retail Price: $20</del>
+        <ins class="popup__new-price">Only $10 <span>(save 50%)</span></ins>
+        <a href="#" class="btn popup__btn">Yes, I want lifetime protection!</a>
+        <a href="#" class="popup__link" id="close-btn">No, Thank you</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 

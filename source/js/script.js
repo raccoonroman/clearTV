@@ -146,3 +146,12 @@ document.querySelectorAll("[data-slidetoggle]").forEach(function (el) {
   return el.addEventListener('click', slidetoggle);
 });
 //end of height animation
+
+
+
+var popup = document.querySelector('#popup');
+var closeBtn = popup.querySelector('#close-btn');
+closeBtn.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  popup.style.display = 'none';
+});
