@@ -24,7 +24,7 @@ gulp.task("css", function () {
     .pipe(plumber())
     .pipe(sass())
     .pipe(postcss([
-      autoprefixer() // autoprefixer({browsers: ['last 2 version']}),
+      autoprefixer({browsers: ['last 1 version']}) // autoprefixer({browsers: ['last 2 version']}),
     ]))
     .pipe(gulp.dest("source/css"))
     .pipe(csso())
