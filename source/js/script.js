@@ -127,21 +127,29 @@ for (var i = 0; i < questions.length; i++) {
 
 
 //height animation for any element (cope/paste)
-function slidetoggle() {
-  var _this = this;
+// не використав, бо не підійшло в даній ситуації
+// function slidetoggle() {
+//   var _this = this;
 
-  document.querySelectorAll(this.getAttribute('data-slidetoggle')).forEach(function (el) {
-    var ch = el.clientHeight,
-        sh = el.scrollHeight,
-        isCollapsed = !ch,
-        noHeightSet = !el.style.height;
-    el.style.height = (isCollapsed || noHeightSet ? sh : 0) + "px";
-    if (noHeightSet) return slidetoggle.call(_this);
-  });
-}
+//   document.querySelectorAll(this.getAttribute('data-slidetoggle')).forEach(function (el) {
+//     var ch = el.clientHeight,
+//         sh = el.scrollHeight,
+//         isCollapsed = !ch,
+//         noHeightSet = !el.style.height;
+//     el.style.height = (isCollapsed || noHeightSet ? sh : 0) + "px";
+//     if (noHeightSet) return slidetoggle.call(_this);
+//   });
+// }
 
-document.querySelectorAll("[data-slidetoggle]").forEach(function (el) {
-  return el.addEventListener('click', slidetoggle);
+// document.querySelectorAll("[data-slidetoggle]").forEach(function (el) {
+//   return el.addEventListener('click', slidetoggle);
+// });
+
+var showFaqBtn = document.querySelector('a[data-slidetoggle="#faq"]');
+var faq = document.querySelector('#faq');
+showFaqBtn.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  faq.classList.toggle("active");
 });
 //end of height animation
 
@@ -185,6 +193,7 @@ window.addEventListener("keydown", function(evt) {
   }
 });
 
-setTimeout( function() {
-  popup1.classList.add('active');
-}, 20000);
+// setTimeout( function() {
+//   popup1.classList.add('active');
+//   popup1Overlay.classList.add('active');
+// }, 20000);
