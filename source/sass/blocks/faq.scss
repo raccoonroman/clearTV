@@ -1,12 +1,10 @@
 .faq__container {
-  // transform: scaleY(0);
   height: 0;
   overflow: hidden;
   transition: transform .5s;
 
   &.active {
     height: auto;
-    // transform: scaleY(1);
   }
 }
 

@@ -1,0 +1,172 @@
+.product {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 15px 15px 30px;
+  border: 1px solid #CED8DD;
+  border-radius: 10px;
+
+  &--1 img {
+    max-width: 54px;
+  }
+
+  &--2 img {
+    max-width: 75px;
+  }
+
+  &--3 img {
+    max-width: 87px;
+  }
+}
+
+.product__badge {
+  position: absolute;
+  top: 22px;
+  right: -44px;
+  display: inline-block;
+  padding: 4px 40px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #aaa;
+  box-shadow: 0 0 6px #aaa;
+  transform: rotate(45deg);
+
+  &--popular {
+    background-color: #EC463B;
+  }
+
+  &--value {
+    background-color: #22A349;
+  }
+}
+
+.product__image {
+  margin-right: 15px;
+  width: 87px;
+  text-align: center;
+}
+
+.product__content {
+  width: 55%;
+  max-width: 130px;
+}
+
+.product__kit {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+.product__price {
+  padding-bottom: 0;
+  font-weight: 700;
+  color: #56ac54;
+}
+
+.product__stock {
+  padding-bottom: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s;
+
+  span {
+    position: relative;
+    font-weight: 700;
+    color: #EC463B;
+
+    &::after {
+      content: '';
+      margin: 0 6px;
+      display: inline-block;
+      transform: translateY(1px);
+      width: 43px;
+      height: 13px;
+      border: 1px solid #000;
+      background: linear-gradient(to right, #EC463B 13px, transparent 13px);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .product {
+    flex-direction: column;
+    flex-wrap: no-wrap;
+    height: 100%;
+    padding: 50px 20px 20px;
+    border: 3px solid transparent;
+
+    &--1 img,
+    &--2 img,
+    &--3 img {
+      max-width: 100%;
+    }
+  }
+
+  .product__badge {
+    top: 24px;
+    right: -60px;
+    padding: 12px 60px;
+    font-size: 16px;
+  }
+
+  .product__title {
+    margin: 0;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .product__image {
+    margin-right: 0;
+    margin-bottom: 5px;
+    min-height: 190px;
+    width: auto;
+    text-align: center;
+  }
+
+  .product__content {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .product__kit {
+    text-align: center;
+    font-size: 24px;
+
+    br {
+      display: none;
+    }
+  }
+
+  .product__price {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+  }
+
+  .product__free-shiping {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 0;
+
+    span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+
+  .product__warranty-text {
+    margin-top: auto;
+    padding-bottom: 12px;
+    text-align: center;
+    font-size: 18px;
+  }
+}

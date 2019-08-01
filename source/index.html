@@ -253,7 +253,7 @@
     </section>
 
     <section class="products">
-      <div class="container container--white">
+      <div class="container container--white products__container">
         <div class="heading">
           <h3>The most powerful and innovative home TV antenna on the market!</h3>
           <p>NEVER PAY FOR CABLE AGAIN. Switch to ClearTv Key TODAY.</p>
@@ -263,30 +263,40 @@
             <input class="visually-hidden" id="cleartv1" type="radio" name="cleartv" value="cleartv-1">
             <label class="products__item-box" for="cleartv1">
               <article class="product  product--1">
+                <h2 class="product__title hidden-on-mobile"><b>1</b> - ClearTv Key</h2>
                 <div class="product__image">
                   <img src="img/clearTV-1.png" alt="" width="105" height="167">
                 </div>
                 <div class="product__content">
-                  <h2 class="product__name">1 - ClearTV Key+S&H</h2>
+                  <p class="product__kit">1 - ClearTV Key+S&H</p>
                   <p class="product__price">Retail: $39.95</p>
                 </div>
-                <p class="product__stock">Stock Availability: <span>LOW</span></p>
+                <p class="product__stock hidden-on-desktop">Stock Availability: <span>LOW</span></p>
+                <p class="product__warranty-text hidden-on-mobile">1 Year Warranty!</p>
+                <a href="#" class="btn  products__btn  hidden-on-mobile">Order now</a>
               </article>
             </label>
           </li>
           <li class="products__item">
-            <input class="visually-hidden" id="cleartv2" type="radio" name="cleartv" value="cleartv-2">
+            <input class="visually-hidden" id="cleartv2" type="radio" name="cleartv" value="cleartv-2" checked>
             <label class="products__item-box" for="cleartv2">
               <article class="product  product--2">
                 <p class="product__badge product__badge--popular">Most Popular</p>
+                <h2 class="product__title hidden-on-mobile"><b>2</b> - ClearTv Key</h2>
                 <div class="product__image">
                   <img src="img/clearTV-2.png" alt="" width="147" height="181">
                 </div>
                 <div class="product__content">
-                  <h2 class="product__name">Buy 1, Get 1 50% OFF + FREE SHIPPING</h2>
+                  <p class="product__kit">Buy 1,<br>Get 1 50% OFF + FREE SHIPPING</p>
                   <p class="product__price">Only $73.75</p>
                 </div>
-                <p class="product__stock">Stock Availability: <span>LOW</span></p>
+                <p class="product__stock hidden-on-desktop">Stock Availability: <span>LOW</span></p>
+                <p class="product__free-shiping hidden-on-mobile">
+                  <span>Free shipping</span>
+                  <img src="img/truck.svg" width="50" height="50" alt="">
+                </p>
+                <p class="product__warranty-text hidden-on-mobile">1 Year Warranty!</p>
+                <a href="#" class="btn  products__btn  hidden-on-mobile">Order now</a>
               </article>
             </label>
           </li>
@@ -295,19 +305,32 @@
             <label class="products__item-box" for="cleartv3">
               <article class="product  product--3">
                 <p class="product__badge product__badge--value">Best Value</p>
+                <h2 class="product__title hidden-on-mobile"><b>3</b> - ClearTv Key</h2>
                 <div class="product__image">
                   <img src="img/clearTV-3.png" alt="" width="165" height="175">
                 </div>
                 <div class="product__content">
-                  <h2 class="product__name">Buy 2, Get 1 FREE + FREE SHIPPING</h2>
+                  <p class="product__kit">Buy 2,<br>Get 1 FREE + FREE SHIPPING</p>
                   <p class="product__price">Only $92.19</p>
                 </div>
-                <p class="product__stock">Stock Availability: <span>LOW</span></p>
+                <p class="product__stock hidden-on-desktop">Stock Availability: <span>LOW</span></p>
+                <p class="product__free-shiping hidden-on-mobile">
+                  <span>Free shipping</span>
+                  <img src="img/truck.svg" width="50" height="50" alt="">
+                </p>
+                <p class="product__warranty-text hidden-on-mobile">1 Year Warranty!</p>
+                <a href="#" class="btn  products__btn  hidden-on-mobile">Order now</a>
               </article>
             </label>
           </li>
         </ul>
-        <a href="#" class="btn  products__btn">Order now</a>
+        <a href="#" class="btn  products__btn hidden-on-desktop">Order now</a>
+        <div class="products__payments">
+            <img src="img/payment.png" alt="" width="742" height="43">
+            <div class="hidden-on-desktop">
+              <p><strong>100% Satisfaction Guarantee!</strong></p>
+            </div>
+        </div>
       </div>
     </section>
 
