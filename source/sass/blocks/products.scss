@@ -112,4 +112,25 @@
       box-shadow: inset 0 -2px #2A4A58;
     }
   }
+
+  .products__payments {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+
+    p {
+      flex-shrink: 0;
+      margin: 0 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .products__satisfaction-img {
+    max-width: 88px;
+    flex-shrink: 0;
+    margin-right: 15px;
+  }
 }
