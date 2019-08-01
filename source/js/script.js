@@ -1,7 +1,7 @@
 "use strict";
 
 // countdown start of code
-var countDownDate = new Date("July 26, 2019 18:00:00").getTime();
+var countDownDate = new Date("August 2, 2019 18:00:00").getTime();
 var countDownNode1 = document.getElementById("countdown-desktop");
 var countDownNode2 = document.getElementById("countdown-mobile");
 var colonNode = "<span class=\"countdown__colon\"> : </span>";
@@ -84,17 +84,15 @@ $(document).ready(function(){
 
 
   //animate scroll to any content (cope/paste)
-  $('a[href^="#"]').on('click', function(event) {
-
+  $('a[href^="#"]:not(a[href="#"])').on('click', function(event) {
     var target = $( $(this).attr('href') );
-
     if( target.length) {
-        event.preventDefault();
-        $('html, body').animate({
-            scrollTop: target.offset().top
-        }, 500);
+      event.preventDefault();
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 500);
     }
-});
+  });
 });
 
 
@@ -149,9 +147,44 @@ document.querySelectorAll("[data-slidetoggle]").forEach(function (el) {
 
 
 
-var popup = document.querySelector('#popup');
-var closeBtn = popup.querySelector('#close-btn');
-closeBtn.addEventListener('click', function (evt) {
-  evt.preventDefault();
-  popup.style.display = 'none';
+//popup special offer
+var popup1 = document.querySelector('#popup-offer');
+var openPopup1Btn = document.querySelector('#open-popup-offer-btn');
+var closePopup1Link = document.querySelector('#close-popup-offer-btn');
+var popup1Overlay = document.querySelector('#popup-offer-overlay');
+var popup1CloseBtn = document.querySelector('#popup-offer-close-btn');
+
+if (openPopup1Btn) {
+  openPopup1Btn.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    popup1.classList.add('active');
+    popup1Overlay.classList.add('active');
+  });
+}
+
+var closePopup1 = function(element) {
+  element.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    popup1.classList.remove('active');
+    popup1Overlay.classList.remove('active');
+  });
+};
+
+closePopup1(closePopup1Link);
+closePopup1(popup1Overlay);
+closePopup1(popup1CloseBtn);
+
+window.addEventListener("keydown", function(evt) {
+  if (evt.keyCode === 27) {
+    evt.preventDefault();
+
+    if (popup1.classList.contains("active")) {
+      popup1.classList.remove("active");
+      popup1Overlay.classList.remove("active");
+    }
+  }
 });
+
+setTimeout( function() {
+  popup1.classList.add('active');
+}, 20000);
