@@ -1,7 +1,7 @@
 "use strict";
 
 // countdown start of code
-var countDownDate = new Date("August 2, 2019 18:00:00").getTime();
+var countDownDate = new Date("September 2, 2019 18:00:00").getTime();
 var countDownNode1 = document.getElementById("countdown-desktop");
 var countDownNode2 = document.getElementById("countdown-mobile");
 var colonNode = "<span class=\"countdown__colon\"> : </span>";
@@ -126,7 +126,7 @@ for (var i = 0; i < questions.length; i++) {
 
 
 
-//height animation for any element (cope/paste)
+// height animation for any element (cope/paste)
 // не використав, бо не підійшло в даній ситуації
 // function slidetoggle() {
 //   var _this = this;

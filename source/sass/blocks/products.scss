@@ -99,7 +99,7 @@
     }
   }
 
-  .products__item input:checked & + label {
+  .products__item input:checked + label {
     transform: scale(1.05);
 
     .product {
@@ -111,6 +111,10 @@
       background: #E0701D;
       box-shadow: inset 0 -2px #2A4A58;
     }
+  }
+
+  .products__btn {
+    text-transform: uppercase;
   }
 
   .products__payments {
