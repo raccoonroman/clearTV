@@ -258,9 +258,11 @@ var productsBtnsDesktopClickHandler = function (button) {
   button.addEventListener('click', function (evt) {
     evt.preventDefault();
     orderSection.classList.add('active');
-    var orderedProduct = button.closest(".products__item-box");
-    var productPriceValue = orderedProduct.querySelector('.product__price-value').innerHTML;
-    var productName = orderedProduct.querySelector('.product__title').innerHTML;
+    var orderedProductItem = button.closest(".products__item");
+    var orderedInput = orderedProductItem.querySelector('input[name="cleartv"]');
+    orderedInput.checked = true;
+    var productPriceValue = orderedProductItem.querySelector('.product__price-value').innerHTML;
+    var productName = orderedProductItem.querySelector('.product__title').innerHTML;
     orderedProductName.innerHTML = productName;
     for (var i = 0; i < orderPricevalueNodes.length; i++) {
       orderPricevalueNodes[i].innerHTML = productPriceValue;
