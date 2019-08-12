@@ -214,7 +214,8 @@ orderSummaryBtn.addEventListener('click', function (evt) {
 
 //set price in mobile order button
 var orderPricevalueNodes = document.querySelectorAll('.order__price-value');
-var orderedProductImage = document.querySelector('.order__summary-product-image');
+var orderedProductNumber = document.querySelector('.order__summary-product-number');
+var orderedProductImage = document.querySelector('.order__summary-product-image img');
 var orderedProductName = document.querySelector('.order__summary-product-name');
 var orderSection = document.querySelector('.order');
 
@@ -227,8 +228,10 @@ productBtnMobile.addEventListener('click', function (evt) {
   var productImage = productChecked.querySelector('.product__image img');
   var productName = productChecked.querySelector('.product__title');
   var productPriceValue = productChecked.querySelector('.product__price-value');
+  var productNumber = productName.querySelector('b');
   orderedProductImage.src = productImage.src;
   orderedProductName.innerHTML = productName.innerHTML;
+  orderedProductNumber.innerHTML = productNumber.innerHTML;
   for (var i = 0; i < orderPricevalueNodes.length; i++) {
     orderPricevalueNodes[i].innerHTML = productPriceValue.innerHTML;
   }
@@ -266,8 +269,10 @@ var productsBtnsDesktopClickHandler = function (button) {
     var productImage = orderedProductItem.querySelector('.product__image img');
     var productPriceValue = orderedProductItem.querySelector('.product__price-value');
     var productName = orderedProductItem.querySelector('.product__title');
+    var productNumber = productName.querySelector('b');
     orderedProductImage.src = productImage.src;
     orderedProductName.innerHTML = productName.innerHTML;
+    orderedProductNumber.innerHTML = productNumber.innerHTML;
     for (var i = 0; i < orderPricevalueNodes.length; i++) {
       orderPricevalueNodes[i].innerHTML = productPriceValue.innerHTML;
     }
