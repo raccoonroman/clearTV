@@ -214,19 +214,23 @@ orderSummaryBtn.addEventListener('click', function (evt) {
 
 //set price in mobile order button
 var orderPricevalueNodes = document.querySelectorAll('.order__price-value');
+var orderedProductImage = document.querySelector('.order__summary-product-image');
 var orderedProductName = document.querySelector('.order__summary-product-name');
 var orderSection = document.querySelector('.order');
 
 var productBtnMobile = document.querySelector('.products__btn--mobile');
+var productsBtnsDesktop = document.querySelectorAll('.products__btn--desktop');
 
 productBtnMobile.addEventListener('click', function (evt) {
   orderSection.classList.add('active');
   var productChecked = document.querySelector('.products__item input:checked + label');
-  var productPriceValue = productChecked.querySelector('.product__price-value').innerHTML;
-  var productName = productChecked.querySelector('.product__title').innerHTML;
-  orderedProductName.innerHTML = productName;
+  var productImage = productChecked.querySelector('.product__image img');
+  var productName = productChecked.querySelector('.product__title');
+  var productPriceValue = productChecked.querySelector('.product__price-value');
+  orderedProductImage.src = productImage.src;
+  orderedProductName.innerHTML = productName.innerHTML;
   for (var i = 0; i < orderPricevalueNodes.length; i++) {
-    orderPricevalueNodes[i].innerHTML = productPriceValue;
+    orderPricevalueNodes[i].innerHTML = productPriceValue.innerHTML;
   }
 });
 // end of price in mobile order button
@@ -252,8 +256,6 @@ if (!Element.prototype.closest) {
 
 
 //set price in desktop order buttons
-var productsBtnsDesktop = document.querySelectorAll('.products__btn--desktop');
-
 var productsBtnsDesktopClickHandler = function (button) {
   button.addEventListener('click', function (evt) {
     evt.preventDefault();
@@ -261,11 +263,13 @@ var productsBtnsDesktopClickHandler = function (button) {
     var orderedProductItem = button.closest(".products__item");
     var orderedInput = orderedProductItem.querySelector('input[name="cleartv"]');
     orderedInput.checked = true;
-    var productPriceValue = orderedProductItem.querySelector('.product__price-value').innerHTML;
-    var productName = orderedProductItem.querySelector('.product__title').innerHTML;
-    orderedProductName.innerHTML = productName;
+    var productImage = orderedProductItem.querySelector('.product__image img');
+    var productPriceValue = orderedProductItem.querySelector('.product__price-value');
+    var productName = orderedProductItem.querySelector('.product__title');
+    orderedProductImage.src = productImage.src;
+    orderedProductName.innerHTML = productName.innerHTML;
     for (var i = 0; i < orderPricevalueNodes.length; i++) {
-      orderPricevalueNodes[i].innerHTML = productPriceValue;
+      orderPricevalueNodes[i].innerHTML = productPriceValue.innerHTML;
     }
   });
 };

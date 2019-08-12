@@ -112,6 +112,21 @@
   }
 }
 
+.order__summary-product {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: auto;
+    max-height: 32px;
+    margin: 0 10px 10px 0;
+  }
+
+  b {
+    margin-right: 4px;
+  }
+}
+
 
 
 
@@ -188,6 +203,13 @@
       line-height: 2.5;
     }
   }
+
+  .order__summary-product {
+    img {
+      max-height: 64px;
+    }
+  }
+
 
   .order__paypal-btn {
     max-width: 100%;
