@@ -127,7 +127,6 @@ for (var i = 0; i < questions.length; i++) {
 
 
 // height animation for any element (cope/paste)
-// не використав, бо не підійшло в даній ситуації
 // function slidetoggle() {
 //   var _this = this;
 
@@ -144,14 +143,17 @@ for (var i = 0; i < questions.length; i++) {
 // document.querySelectorAll("[data-slidetoggle]").forEach(function (el) {
 //   return el.addEventListener('click', slidetoggle);
 // });
+//end of height animation
 
-var showFaqBtn = document.querySelector('a[data-slidetoggle="#faq"]');
+
+// show faq content
+var showFaqBtn = document.querySelector('a[href="#faq"]');
 var faq = document.querySelector('#faq');
 showFaqBtn.addEventListener('click', function (evt) {
   evt.preventDefault();
   faq.classList.toggle("active");
 });
-//end of height animation
+
 
 
 
@@ -197,3 +199,76 @@ window.addEventListener("keydown", function(evt) {
 //   popup1.classList.add('active');
 //   popup1Overlay.classList.add('active');
 // }, 20000);
+
+// toogle order summary on mobile
+var orderSummaryBtn = document.querySelector('.order__summary-label');
+orderSummaryBtn.classList.remove('active');
+orderSummaryBtn.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  orderSummaryBtn.classList.toggle("active");
+});
+
+
+//set product summary table
+
+
+//set price in mobile order button
+var orderPricevalueNodes = document.querySelectorAll('.order__price-value');
+var orderedProductName = document.querySelector('.order__summary-product-name');
+var orderSection = document.querySelector('.order');
+
+var productBtnMobile = document.querySelector('.products__btn--mobile');
+
+productBtnMobile.addEventListener('click', function (evt) {
+  orderSection.classList.add('active');
+  var productChecked = document.querySelector('.products__item input:checked + label');
+  var productPriceValue = productChecked.querySelector('.product__price-value').innerHTML;
+  var productName = productChecked.querySelector('.product__title').innerHTML;
+  orderedProductName.innerHTML = productName;
+  for (var i = 0; i < orderPricevalueNodes.length; i++) {
+    orderPricevalueNodes[i].innerHTML = productPriceValue;
+  }
+});
+// end of price in mobile order button
+
+
+//polyfill for Element.closest()
+if (!Element.prototype.closest) {
+  if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+  }
+  Element.prototype.closest = function (s) {
+    var el = this;
+    var ancestor = this;
+    if (!document.documentElement.contains(el)) return null;
+    do {
+      if (ancestor.matches(s)) return ancestor;
+      ancestor = ancestor.parentElement;
+    } while (ancestor !== null);
+    return null;
+  };
+}
+//end of polyfill
+
+
+//set price in desktop order buttons
+var productsBtnsDesktop = document.querySelectorAll('.products__btn--desktop');
+
+var productsBtnsDesktopClickHandler = function (button) {
+  button.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    orderSection.classList.add('active');
+    var orderedProduct = button.closest(".products__item-box");
+    var productPriceValue = orderedProduct.querySelector('.product__price-value').innerHTML;
+    var productName = orderedProduct.querySelector('.product__title').innerHTML;
+    orderedProductName.innerHTML = productName;
+    for (var i = 0; i < orderPricevalueNodes.length; i++) {
+      orderPricevalueNodes[i].innerHTML = productPriceValue;
+    }
+  });
+};
+
+for (var i = 0; i < productsBtnsDesktop.length; i++) {
+  productsBtnsDesktopClickHandler(productsBtnsDesktop[i]);
+}
+// end of price in desktop order buttons

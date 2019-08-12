@@ -269,11 +269,11 @@
                 </div>
                 <div class="product__content">
                   <p class="product__kit">1 - ClearTV Key+S&H</p>
-                  <p class="product__price">Retail: $39.95</p>
+                  <p class="product__price">Retail: $<span class="product__price-value">39.95</span></p>
                 </div>
                 <p class="product__stock hidden-on-desktop">Stock Availability: <span>LOW</span></p>
                 <p class="product__warranty-text hidden-on-mobile">1 Year Warranty!</p>
-                <a href="#" class="btn  products__btn  hidden-on-mobile">Order now</a>
+                <a href="#order" class="btn  products__btn  products__btn--desktop  hidden-on-mobile">Order now</a>
               </article>
             </label>
           </li>
@@ -288,7 +288,7 @@
                 </div>
                 <div class="product__content">
                   <p class="product__kit">Buy 1,<br>Get 1 50% OFF + FREE SHIPPING</p>
-                  <p class="product__price">Only $73.75</p>
+                  <p class="product__price">Only $<span class="product__price-value">73.75</span></p>
                 </div>
                 <p class="product__stock hidden-on-desktop">Stock Availability: <span>LOW</span></p>
                 <p class="product__free-shiping hidden-on-mobile">
@@ -296,7 +296,7 @@
                   <img src="img/truck.svg" width="50" height="50" alt="">
                 </p>
                 <p class="product__warranty-text hidden-on-mobile">1 Year Warranty!</p>
-                <a href="#" class="btn  products__btn  hidden-on-mobile">Order now</a>
+                <a href="#order" class="btn  products__btn  products__btn--desktop  hidden-on-mobile">Order now</a>
               </article>
             </label>
           </li>
@@ -311,7 +311,7 @@
                 </div>
                 <div class="product__content">
                   <p class="product__kit">Buy 2,<br>Get 1 FREE + FREE SHIPPING</p>
-                  <p class="product__price">Only $92.19</p>
+                  <p class="product__price">Only $<span class="product__price-value">92.19</span></p>
                 </div>
                 <p class="product__stock hidden-on-desktop">Stock Availability: <span>LOW</span></p>
                 <p class="product__free-shiping hidden-on-mobile">
@@ -319,12 +319,12 @@
                   <img src="img/truck.svg" width="50" height="50" alt="">
                 </p>
                 <p class="product__warranty-text hidden-on-mobile">1 Year Warranty!</p>
-                <a href="#" class="btn  products__btn  hidden-on-mobile">Order now</a>
+                <a href="#order" class="btn  products__btn  products__btn--desktop  hidden-on-mobile">Order now</a>
               </article>
             </label>
           </li>
         </ul>
-        <a href="#" class="btn  products__btn hidden-on-desktop">Order now</a>
+        <a href="#order" class="btn  products__btn products__btn--mobile hidden-on-desktop" id="">Order now</a>
         <div class="products__payments">
           <div class="products__satisfaction-img  hidden-on-mobile">
             <img src="img/satisfaction.png" alt="" width="190" height="153">
@@ -340,8 +340,8 @@
       </div>
     </section>
 
-    <section class="order">
-      <div class="container container--white">
+    <section class="order" id="order">
+      <div class="container container--white order__container">
         <div class="row">
           <div class="col-6">
             <p class="order__title"><strong>Complete Your Order</strong></p>
@@ -351,15 +351,15 @@
           </div>
           <div class="col-6">
             <div class="order__summary">
-              <button type="button" class="order__summary-label hidden-on-desktop">
+              <button type="button" class="order__summary-label active hidden-on-desktop">
                 <span class="order__summary-label-text">Order Summary</span>
-                <span class="order__summary-label-price"><strong>$39.95</strong></span>
+                <span class="order__summary-label-price"><strong>$<span class="order__price-value">0</span></strong></span>
               </button>
               <div class="order__summary-content">
                 <table>
                   <tr>
-                    <th>1 - ClearTv Key</th>
-                    <td><strong>$39.95</strong></td>
+                    <th class="order__summary-product-name">ClearTv Key</th>
+                    <td><strong>$<span class="order__price-value">0</span></strong></td>
                   </tr>
                   <tr>
                     <th>Tax</th>
@@ -369,9 +369,9 @@
                     <th>Shipping</th>
                     <td><strong>Free</strong></td>
                   </tr>
-                  <tr class="order__summary-total">
+                  <tr class="order__summary-total hidden-on-mobile">
                     <th><strong>Total</strong></th>
-                    <td><strong>$39.95</strong></td>
+                    <td><strong><span class="order__price-value">0</span></strong></td>
                   </tr>
                 </table>
               </div>
@@ -385,7 +385,7 @@
       <div class="container container--darkgray tac">
         <div class="h15"></div>
         <div class="faq__heading">
-          <p><strong>Have a question? <a data-slidetoggle="#faq" href="#faq">See our FAQs</a></strong></p>
+          <p><strong>Have a question? <a href="#faq">See our FAQs</a></strong></p>
         </div>
       </div>
       <div  id="faq" class="container container--white tac faq__container">
